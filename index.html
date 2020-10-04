@@ -38,7 +38,7 @@
     }
 
     .textArea {
-      width: 200px; 
+      width: 400px; 
       margin-left: auto; 
       margin-right: auto; 
       position: relative; 
@@ -46,7 +46,7 @@
     }
 
     .formArea {
-      width: 200px; 
+      width: 400px; 
       margin-left: auto; 
       margin-right: auto; 
       position: relative; 
@@ -57,8 +57,15 @@
       color: white;
     }
 
+    p{
+      font-size: 12px;
+      line-height: 20px;
+    }
+
     h2 {
       margin-top: 0px; 
+      font-size: 40px;
+      font-weight: 900
     }
 
     @font-face {
@@ -81,18 +88,50 @@
 
     form input{
       margin-bottom: 10px;
-      border-radius: 3.5px;;
+      border-radius: 3.5px;
+      width: 100%;
+      font-family: 'poppins';
+      font-size: 12px;
+      color: hsl(246, 25%, 77%);
+      font-style: bold;
+      font-weight: 800;
+      padding-left: 28px;
+      padding-right: -20px;
+      box-sizing: border-box;
+      padding-top: 9px;
+      /* outline: yellow; */
+      padding-bottom: 9px;
+      border-color: yellow;
+      /* border-top: yellow; */
+      border: 1px solid hsl(246, 25%, 77%);
     }
 
     form input[type=submit]{
       margin-bottom: 0px; 
       width: 100%;
+      color: white;
     }
 
     .bluebutton {
-      margin-bottom: 10px;
+      margin-bottom: 20px;
+      background-color: hsl(248, 32%, 49%);
+      width: 100%;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: poppins;
+      box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      font-size: 12px;
     }
 
+    .submit {
+      background-color: hsl(154, 59%, 51%);
+    }
+
+    .bold {
+      font-weight: 800;
+    }
       
 
     
@@ -120,14 +159,14 @@
 
       <div class="formArea">
 
-        <button class="bluebutton"><span>Try it free 7 days</span> then $20/mo. thereafter</button>
+        <button class="bluebutton"><span class="bold">Try it free 7 days</span> then $20/mo. thereafter</button>
 
         <form action="">
-          <input type="text" id="fname" name="fname" value="John"><br>
-          <input type="text" id="lname" name="lname" value="Doe"><br>
-          <input type="email" id="email" name="email" value="Doe"><br>
-          <input type="password" id="pword" name="pword" value="Doe"><br>
-          <input type="submit" value="Submit">
+          <input type="text" id="fname" name="fname" placeholder="First Name"><br>
+          <input type="text" id="lname" name="lname" placeholder="Last Name"><br>
+          <input type="email" id="email" name="email" placeholder="Email Address"><br>
+          <input type="password" id="pword" name="pword" placeholder="Password"><br>
+          <input type="submit" value="CLAIM YOUR FREE TRIAL" class="submit">
         </form> 
 
       </div>
