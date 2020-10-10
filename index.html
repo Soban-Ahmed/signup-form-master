@@ -1,180 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+      <title>Frontend Mentor | Intro component with sign up form</title>
+      <style>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- displays site properly based on user's device -->
+        @font-face {
+          font-family: poppins;
+          src: url(fonts/Poppins-Bold.ttf) format('truetype');
+          font-weight: 900;
+        }
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        @font-face {
+          font-family: poppins-reg;
+          src: url(fonts/Poppins-Regular.ttf) format('truetype');
+          font-weight: 400;
+        }
 
-  <title>Frontend Mentor | Intro component with sign up form</title>
+        @font-face {
+          font-family: poppins-med-italic;
+          src: url(fonts/Poppins-Italic.ttf) format('truetype');
+          font-weight: 400;
+        }
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
+        html, body, .wrapper {
+          height: 100%;
+        }
 
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
+        body {
+          background-image: url("images/bg-intro-desktop.png");
+          background-color: hsl(0, 100%, 74%);
+          font-family: 'poppins';
+          color: white;
+        }
 
-    @media (min-width: 1200px){
+        h1 {
+          margin-top: 0px;
+          margin-bottom: 26px;
+          font-size: 43px;
+          line-height: 48px;
+          
+        }
 
-      .wrapper {
-          width: 1200px;
-          display: flex;
+        section {
+          width: 50%;
+          margin-top: auto;
+          margin-bottom: auto;
+          padding-left: 10px;
+          padding-right: 10px;
+          box-sizing: border-box;
+        }
+
+        .text-area {
+          width: 435px;
           margin-left: auto;
           margin-right: auto;
-      }
+        }
 
-    }
+        .text-area p {
+          font-family: poppins-reg;
+          font-size: 14px;
+          line-height: 23px;
+        }
 
-    section {
-      width: 50%;
-      height: 400px;
-    }
+        .form-area {
+          width: 400px;
+          margin-left: auto;
+          margin-right: auto;
+        }
 
-    .textArea {
-      width: 400px; 
-      margin-left: auto; 
-      margin-right: auto; 
-      position: relative; 
-      top: 50%;
-    }
+        .blue-button {
+          color: white;
+          background-color: hsl(248, 32%, 49%);
+          box-shadow: 0px 6px rgba(0, 0, 0, 0.2);
+          width: 100%;
+          padding: 15px;
+          margin-bottom: 18px;
+          border-radius: 8px;
+          border: none;
+          font-family: poppins-reg;
+          cursor: pointer;
+          font-size: 12px;
+          
+        }
 
-    .formArea {
-      width: 400px; 
-      margin-left: auto; 
-      margin-right: auto; 
-      position: relative; 
-      top: 50%;
-    }
+        form {
+          background: white;
+          border-radius: 8px;
+          padding: 32px;
+          box-shadow: 0px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    h2, p{
-      color: white;
-    }
+        form input {
+          width: 100%;
+          font-family: 'poppins';
+          font-size: 12px;
+          color: hsl(249, 10%, 26%);
+          font-style: bold;
+          font-weight: 800;
+          margin-bottom: 16px;
+          padding: 16px 2px 16px 26px;
+          border-radius: 3.5px;
+          border: 1px solid hsl(246, 25%, 77%);
+          box-sizing: border-box;
+        }
 
-    p{
-      font-size: 12px;
-      line-height: 20px;
-    }
+        form input[type=submit] {
+          background-color: hsl(154, 59%, 51%);
+          margin-bottom: 0px;
+          width: 100%;
+          color: white;
+          padding-left: 0px;
+          cursor: pointer;
+        }
 
-    h2 {
-      margin-top: 0px; 
-      font-size: 40px;
-      font-weight: 900
-    }
+        .error-message {
+          text-align: right;
+          padding-bottom: 0px;
+          margin-top: -13px;
+          font-family: poppins-med-italic;
+          font-size: 9px;
+          color: hsl(0, 100%, 74%);
+          font-weight: 600;
+          line-height: 20px;
+        }
 
-    @font-face {
-      font-family: poppins;
-      src: url(fonts/Poppins-Light.ttf) format('truetype');
-      font-weight: 500;
-    }
+        .bold {
+          font-weight: 800;
+        }
 
-    body {
-      background-image: url("images/bg-intro-desktop.png");
-      background-color: hsl(0, 100%, 74%);
-      font-family: 'poppins';
-    }
-
-    form {
-      background: white;
-      border-radius: 8px;
-      padding: 15px; 
-    }
-
-    form input{
-      margin-bottom: 10px;
-      border-radius: 3.5px;
-      width: 100%;
-      font-family: 'poppins';
-      font-size: 12px;
-      color: hsl(246, 25%, 77%);
-      font-style: bold;
-      font-weight: 800;
-      padding-left: 28px;
-      padding-right: -20px;
-      box-sizing: border-box;
-      padding-top: 9px;
-      /* outline: yellow; */
-      padding-bottom: 9px;
-      border-color: yellow;
-      /* border-top: yellow; */
-      border: 1px solid hsl(246, 25%, 77%);
-    }
-
-    form input[type=submit]{
-      margin-bottom: 0px; 
-      width: 100%;
-      color: white;
-    }
-
-    .bluebutton {
-      margin-bottom: 20px;
-      background-color: hsl(248, 32%, 49%);
-      width: 100%;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      font-family: poppins;
-      box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.5);
-      cursor: pointer;
-      font-size: 12px;
-    }
-
-    .submit {
-      background-color: hsl(154, 59%, 51%);
-    }
-
-    .bold {
-      font-weight: 800;
-    }
+        .terms {
+          color: hsl(246, 25%, 77%);
+          font-size: 8px;
+          text-align: center;
+          margin-bottom: 0px;
+          font-family: poppins-reg;
+          line-height: 20px;
+        }
       
+        #errorIcon1,
+        #errorIcon2,
+        #errorIcon3,
+        #errorIcon4 {
+          background-image: url(images/icon-error.svg);
+          background-repeat: no-repeat;
+          width: 25px;
+          height: 24px;
+          position: absolute;
+          top: 14px;
+          right: 20px;
+          display: none;
+          z-index: 10;
+        }
 
-    
-    
+        .icon-holder {
+          position: relative;
+        }
 
-  </style>
-</head>
+        .terms-and-services {
+          font-familly: poppins;
+          color: hsl(0, 100%, 74%);
+        }
 
-<body>
+        input:focus {
+          outline: none;
+          border: 1px solid hsl(248, 32%, 49%);
+        }
 
-  <div class="wrapper">
+        /******** Media Queries ********/
 
+        @media (max-width: 415px) {
+          body {
+            background-image: url("images/bg-intro-mobile.png");
+          }
+        }
 
-    <section>
-      <div class="textArea">
+        @media (min-width: 1200px) {
+          .wrapper {
+            width: 1200px;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
 
-        <h2>Learn to code by watching others</h2>
+        @media (min-width: 600px) and (max-width: 1199px) {
+          .wrapper {
+            width: 100%;
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
 
-        <p>See how experienced developers solve problems in real-time.<br>Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+        @media (max-width: 599px) {
+          section {
+            margin-bottom: 60px;
+          }
+          .text-section {
+            text-align: center;
+            margin-top: 55px;
+            margin-bottom: 55px;
+          }
+          .text-section p {
+            margin-top: 20px;
+          }        
+          
+        }
 
+        @media (min-width: 767px) and (max-width: 867px) {
+          .text-area {
+            width: auto;
+          }
+          .form-area {
+            width: auto;
+          }
+        }
+
+        @media (max-width: 767px) {
+          h1 {
+            font-size: 27px;
+            line-height: 34px;
+            margin-bottom: 0px;
+          }
+          section {
+            display: block;
+            width: 100%;
+          }
+          .form-area {
+            width: auto;
+          }
+          .text-area {
+            width: 100%;
+          }
+          
+          .terms {
+            font-size: 11px;
+          }
+        }
+
+      </style>
+   </head>
+   <!--<body onload='document.signUpForm.email.focus()'>-->
+   <body>
+      <div class="wrapper">
+         <section class="text-section">
+            <div class="text-area">
+               <h1>Learn to code by watching others</h1>
+               <p>See how experienced developers solve problems in real-time.<br>Watching scripted tutorials is great, but understanding how developers think is invaluable.</p>
+            </div>
+         </section>
+         <section class="form-section">
+            <div class="form-area">
+               <button class="blue-button"><span class="bold">Try it free 7 days</span> then $20/mo. thereafter</button>
+               <form name="signUpForm" onsubmit="return validateMyForm();" novalidate>
+                  <div class="icon-holder"><input type="text" id="firstName"  name="firstName" placeholder="First Name"><i id="errorIcon1" ></i></div>
+                  <div  id="firstNameInvalid"  style="margin-bottom: 0px; display:none">
+                     <p class="error-message"><span class="italic">First Name</span> cannot be empty</p>
+                  </div>
+                  <div class="icon-holder"><input type="text" id="lastName" name="lastName" placeholder="Last Name"><i id="errorIcon2" ></i></div>
+                  <div  id="lastNameInvalid" style="margin-bottom: 0px; display:none">
+                     <p class="error-message"><span class="italic">Last Name</span> cannot be empty</p>
+                  </div>
+                  <div class="icon-holder"><input type="email" id="email" name="email" placeholder="Email Address" ><i id="errorIcon3" ></i></div>
+                  <div  id="emailInvalid"  style="margin-bottom: 0px; display:none">
+                     <p class="error-message">Looks like this is not an <span class="italic">email</span></p>
+                  </div>
+                  <div class="icon-holder"><input type="password" id="pword" name="pword" placeholder="Password"><i id="errorIcon4" ></i></div>
+                  <div  id="passwordInvalid" class="" style="margin-bottom: 0px; display:none">
+                     <p class="error-message"><span class="italic">Password</span> cannot be empty</p>
+                  </div>
+                  <input type="submit" value="CLAIM YOUR FREE TRIAL" class="submit-button" >
+                  <p class="terms">By clicking the button you are agreeing to our <span class="terms-and-services">Terms and Services</span></p>
+               </form>
+            </div>
+         </section>
       </div>
-    </section>
-
-    <section>
-
-      <div class="formArea">
-
-        <button class="bluebutton"><span class="bold">Try it free 7 days</span> then $20/mo. thereafter</button>
-
-        <form action="">
-          <input type="text" id="fname" name="fname" placeholder="First Name"><br>
-          <input type="text" id="lname" name="lname" placeholder="Last Name"><br>
-          <input type="email" id="email" name="email" placeholder="Email Address"><br>
-          <input type="password" id="pword" name="pword" placeholder="Password"><br>
-          <input type="submit" value="CLAIM YOUR FREE TRIAL" class="submit">
-        </form> 
-
-      </div>
-
-    </section>
-
-  </div>
-
-</body>
-
+      <script src="js/jquery.min.js"></script>
+      <script type="text/javascript">
+         function validateMyForm() {
+           var firstName = document.getElementById('firstName').value;
+           var lastName = document.getElementById('lastName').value;
+           var email = document.getElementById('email').value;
+           var pword = document.getElementById('pword').value;
+           var emailStatus = 0;
+           var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+           
+           if (firstName.length < 1) {
+             $('#firstNameInvalid').show('fast')
+             $('#errorIcon1').show('fast')
+             document.getElementById("firstName").style.borderColor = "hsl(0, 100%, 74%)";
+           }else{
+             $('#firstNameInvalid').hide('fast')
+             $('#errorIcon1').hide('fast')
+             document.getElementById("firstName").style.borderColor = "initial";
+           }
+         
+           if (lastName.length < 1) {
+             $('#lastNameInvalid').show('fast')
+             $('#errorIcon2').show('fast')
+             document.getElementById("lastName").style.borderColor = "hsl(0, 100%, 74%)";
+           }else{
+             $('#lastNameInvalid').hide('fast')
+             $('#errorIcon2').hide('fast')
+             document.getElementById("lastName").style.borderColor = "initial";
+           }
+         
+           if (pword.length < 1) {
+             $('#passwordInvalid').show('fast')
+             $('#errorIcon4').show('fast')
+             document.getElementById("pword").style.borderColor = "hsl(0, 100%, 74%)";
+           }else{
+             $('#passwordInvalid').hide('fast')
+             $('#errorIcon4').hide('fast')
+             document.getElementById("pword").style.borderColor = "initial";
+           }
+         
+           if(email.match(mailformat)){
+             emailStatus = 1
+             $('#emailInvalid').hide('fast')
+             $('#errorIcon3').hide('fast')
+             document.getElementById("email").style.borderColor = "initial";
+             document.getElementById("email").style.color = "initial";
+           }else{
+             $('#emailInvalid').show('fast')
+             $('#errorIcon3').show('fast')
+             document.getElementById("email").style.color = "hsl(0, 100%, 74%)";
+             document.getElementById("email").style.borderColor = "hsl(0, 100%, 74%)";
+           }     
+         
+           if (firstName.length < 1 || lastName.length < 1 || emailStatus == 0 || pword.length < 1) {        
+             $("input[type=text]").attr("placeholder", "");
+             $("input[type=password]").attr("placeholder", "");
+             $("input[type=email]").attr("placeholder", email);
+             return false; 
+           }
+         
+         }
+         
+      </script>
+   </body>
 </html>
